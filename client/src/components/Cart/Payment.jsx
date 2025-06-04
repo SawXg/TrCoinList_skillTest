@@ -24,9 +24,6 @@ const Payment = () => {
     const dispatch = useDispatch();
     // const navigate = useNavigate();
     const { enqueueSnackbar } = useSnackbar();
-    // const stripe = useStripe();
-    // const elements = useElements();
-    // const paymentBtn = useRef(null);
 
     const [payDisable, setPayDisable] = useState(false);
 
@@ -49,10 +46,10 @@ const Payment = () => {
     // }
 
     const submitHandler = async (e) => {
-        e.preventDefault();
+        //e.preventDefault();
 
         // paymentBtn.current.disabled = true;
-        setPayDisable(true);
+        setPayDisable(false);
 
         try {
             const config = {

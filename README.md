@@ -1,4 +1,4 @@
-**TC Coinlist-C Project**
+**Tr Coinlist-R Project**
 
 ```
 🚀 Give a Star ⭐️ & Fork to this project ... Happy coding! 🤩`

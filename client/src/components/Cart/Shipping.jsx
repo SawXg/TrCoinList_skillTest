@@ -90,7 +90,7 @@ const Shipping = () => {
                                         <TextField
                                             value={city}
                                             onChange={(e) => setCity(e.target.value)}
-                                            label="City"
+                                            label="City | Region"
                                             fullWidth
                                             variant="outlined"
                                             required
