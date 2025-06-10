@@ -153,3 +153,35 @@ exports.deleteOrder = asyncErrorHandler(async (req, res, next) => {
         success: true,
     });
 });
+
+
+// Cancel New Order
+exports.cancelOrder = asyncErrorHandler(async (req, res, next) => {
+
+    const {
+        shippingInfo,
+        orderItems,
+        paymentInfo,
+        totalPrice,
+    } = req.body;
+
+    const orderExist = await Order.findOne({ paymentInfo });
+
+    if (orderExist) {
+        return next(new ErrorHandler("Order Already Placed", 400));
+    }
+
+    const order = await Order.create({
+        shippingInfo,
+        orderItems,
+        paymentInfo,
+        totalPrice,
+        paidAt: Date.now(),
+        user: req.user._id,
+    });
+
+    res.status(201).json({
+        success: true,
+        order,
+    });
+});
