@@ -9,6 +9,8 @@ import { formatDate } from '../../utils/functions';
 import MetaData from '../Layouts/MetaData';
 import BackdropLoader from '../Layouts/BackdropLoader';
 
+let isUpdate = false;
+
 const OrderTable = () => {
 
     const dispatch = useDispatch();
@@ -30,6 +32,11 @@ const OrderTable = () => {
             enqueueSnackbar("Deleted Successfully", { variant: "success" });
             dispatch({ type: DELETE_ORDER_RESET });
         }
+        if (isUpdate) {
+            enqueueSnackbar("Updated Successfully", { variant: "success" });
+            dispatch({ type: DELETE_ORDER_RESET });
+        }
+        
         dispatch(getAllOrders());
     }, [dispatch, error, deleteError, isDeleted, enqueueSnackbar]);
 
