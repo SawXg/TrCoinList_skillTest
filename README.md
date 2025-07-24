@@ -1,4 +1,4 @@
-**Tr Coinlist-R Project**
+**Tr Coinlist-R Skill test Project**
 
 ```
 🚀 Give a Star ⭐️ & Fork to this project ... Happy coding! 🤩`
